@@ -1,0 +1,1 @@
+﻿<ns0:POAck xmlns:ns0="http://MSC.Hub.OrderProcessor.POAck"><OrderId>COD123458963784_DECLINED</OrderId><OrderDate>1999-05-31T13:20:00.000-05:00</OrderDate><AckId>ACK_COD123458963784_DECLINED</AckId><AckDate>2024-07-16T17:03:28</AckDate><Status>Accepted</Status></ns0:POAck>

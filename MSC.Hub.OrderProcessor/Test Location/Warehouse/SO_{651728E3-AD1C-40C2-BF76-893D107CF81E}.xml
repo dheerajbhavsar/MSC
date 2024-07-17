@@ -1,0 +1,39 @@
+﻿<ns0:SalesOrder xmlns:ns0="http://MSC.Hub.OrderProcessor.SalesOrder">
+  <OrderHeader>
+    <OrderId>COD123458963784_DECLINED</OrderId>
+    <SalesOrderId>SO_COD123458963784_DECLINED</SalesOrderId>
+    <CustomerName>CustomerName_0</CustomerName>
+    <OrderDate>1999-05-31T13:20:00.000-05:00</OrderDate>
+    <OrderTotal>5000</OrderTotal>
+    <Billing>
+      <Id>id_0</Id>
+      <Name>Dhiraj Bhavsar</Name>
+      <Street1>Stree1</Street1>
+      <Street2>Street2</Street2>
+      <City>Pune</City>
+      <State>MH</State>
+      <Country>IN</Country>
+      <ZipCode>411007</ZipCode>
+    </Billing>
+    <Shipping>
+      <Id>id_0</Id>
+      <Name>Some shipping com</Name>
+      <Street1>Some street</Street1>
+      <Street2>some street2</Street2>
+      <City>Chennai</City>
+      <State>TN</State>
+      <Country>IN</Country>
+      <ZipCode>411011</ZipCode>
+    </Shipping>
+  </OrderHeader>
+  <OrderDetails>
+    <LineItem>
+      <LineNumber>10</LineNumber>
+      <ItemId>ItemId_0</ItemId>
+      <ItemDesc>ItemDesc_0</ItemDesc>
+      <Qty>1</Qty>
+      <UoM>UoM_0</UoM>
+      <UnitPrice>5000</UnitPrice>
+    </LineItem>
+  </OrderDetails>
+</ns0:SalesOrder>

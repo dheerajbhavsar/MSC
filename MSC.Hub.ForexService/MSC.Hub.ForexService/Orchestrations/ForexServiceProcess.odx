@@ -1,0 +1,280 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="aead93fc-77b1-4680-aa85-022f44525baa" LowerBound="1.1" HigherBound="54.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="MSC.Hub.ForexService" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="20fd72b6-8834-41fc-beee-1517f358e4d4" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="True" />
+            <om:Property Name="TypeModifier" Value="Public" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="rr_ForexService_PT" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="a8be2b87-452e-4db4-8d88-f81ea1d2fc03" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="RequestResponse" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="89ac436b-9c7c-4ae1-a0e7-507a25f92d37" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.33">
+                    <om:Property Name="Ref" Value="MSC.Hub.ForexService.ExchangeRequest_JSON" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="MessageRef" OID="5d15b788-c13f-4ab2-99e8-60cc6f62b3f7" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="8.35" HigherBound="8.56">
+                    <om:Property Name="Ref" Value="MSC.Hub.ForexService.ExchangeResponse_JSON" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Response" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="de2c0b04-006b-4e04-bb20-f29b22f8363d" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="True" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="sr_DBStoredProc_PT" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="29a90463-7142-4a16-90dd-46932846becb" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="RequestResponse" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="9f18bb3f-307f-47d6-961a-bc36777510e7" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.50">
+                    <om:Property Name="Ref" Value="MSC.Hub.ForexService.TypedProcedure_dbo.uspGetCurrencyRate" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="MessageRef" OID="fa1cab05-1813-46c0-8e0d-b025f885ca36" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="15.52" HigherBound="15.97">
+                    <om:Property Name="Ref" Value="MSC.Hub.ForexService.TypedProcedure_dbo.uspGetCurrencyRateResponse" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Response" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="88bd308b-ac26-4763-a53d-4c551f120a7f" ParentLink="Module_ServiceDeclaration" LowerBound="18.1" HigherBound="53.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ForexServiceProcess" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="ServiceBody" OID="4a64d0f4-bc91-4f88-93e8-b31579c47e24" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="8f5bb297-12aa-4cff-91ab-69649299ea7a" ParentLink="ServiceBody_Statement" LowerBound="31.1" HigherBound="33.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="rr_ForexService" />
+                    <om:Property Name="MessageName" Value="msgForexReq" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Rcv_Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Construct" OID="ceb54c4c-6586-4159-895d-b95453948c98" ParentLink="ServiceBody_Statement" LowerBound="33.1" HigherBound="39.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ConstructDBRequest" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Transform" OID="bc632f84-f0df-4b5f-821f-4e6024dbfd95" ParentLink="ComplexStatement_Statement" LowerBound="36.1" HigherBound="38.1">
+                        <om:Property Name="ClassName" Value="MSC.Hub.ForexService.Maps.ForexRequest_To_DBRequest" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="FortexRequest_To_DBRequest" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="MessagePartRef" OID="de399538-9c77-48aa-8591-d11e5bddd02b" ParentLink="Transform_InputMessagePartRef" LowerBound="37.93" HigherBound="37.104">
+                            <om:Property Name="MessageRef" Value="msgForexReq" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_1" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessagePartRef" OID="e95d8e98-f7c0-45d3-b90f-0c6d1bf76bb8" ParentLink="Transform_OutputMessagePartRef" LowerBound="37.28" HigherBound="37.36">
+                            <om:Property Name="MessageRef" Value="msgDBReq" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_2" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="35895d4d-f52b-4d68-81ab-d93781125fed" ParentLink="Construct_MessageRef" LowerBound="34.23" HigherBound="34.31">
+                        <om:Property Name="Ref" Value="msgDBReq" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Send" OID="495b7d17-287e-4c0b-8338-3e2ad9783cc0" ParentLink="ServiceBody_Statement" LowerBound="39.1" HigherBound="41.1">
+                    <om:Property Name="PortName" Value="sr_DBStoredProc" />
+                    <om:Property Name="MessageName" Value="msgDBReq" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Snd_DBRequest" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Receive" OID="04a6cfb4-ff5d-4225-8ade-e19a6fb5e467" ParentLink="ServiceBody_Statement" LowerBound="41.1" HigherBound="43.1">
+                    <om:Property Name="Activate" Value="False" />
+                    <om:Property Name="PortName" Value="sr_DBStoredProc" />
+                    <om:Property Name="MessageName" Value="msgDBResp" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Response" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Rcv_DBResponse" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Construct" OID="a02ee92f-b048-4dc4-a7d9-500503ec8e84" ParentLink="ServiceBody_Statement" LowerBound="43.1" HigherBound="49.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ConstructForexResponse" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Transform" OID="e13ffcd7-1dea-4270-95ff-6c624ba11fbf" ParentLink="ComplexStatement_Statement" LowerBound="46.1" HigherBound="48.1">
+                        <om:Property Name="ClassName" Value="MSC.Hub.ForexService.Maps.DBResponse_To_ForexResponse" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="DBResponse_To_ForexResponse" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="MessagePartRef" OID="1f5bdfd6-0a5f-4c3c-8ab3-cd18ac265cfc" ParentLink="Transform_InputMessagePartRef" LowerBound="47.99" HigherBound="47.108">
+                            <om:Property Name="MessageRef" Value="msgDBResp" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_3" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessagePartRef" OID="81f12385-0595-45e6-85df-833295b996c5" ParentLink="Transform_OutputMessagePartRef" LowerBound="47.28" HigherBound="47.40">
+                            <om:Property Name="MessageRef" Value="msgForexResp" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_4" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="e526543b-83d9-41e9-a58d-10fd100119af" ParentLink="Construct_MessageRef" LowerBound="44.23" HigherBound="44.35">
+                        <om:Property Name="Ref" Value="msgForexResp" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Send" OID="9103813b-ea0e-430d-8c98-c2dc36dc1497" ParentLink="ServiceBody_Statement" LowerBound="49.1" HigherBound="51.1">
+                    <om:Property Name="PortName" Value="rr_ForexService" />
+                    <om:Property Name="MessageName" Value="msgForexResp" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Response" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Snd+ForexResponse" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="a92a6ce8-e3b3-429a-9b46-641d89821525" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="21.1" HigherBound="23.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="MSC.Hub.ForexService.rr_ForexService_PT" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="rr_ForexService" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="1751643f-ef10-4636-a9a0-a46f4e904029" ParentLink="PortDeclaration_CLRAttribute" LowerBound="21.1" HigherBound="22.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="aabf37ed-a353-4b97-b7d3-bab7d2b31adb" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="23.1" HigherBound="25.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="MSC.Hub.ForexService.sr_DBStoredProc_PT" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="sr_DBStoredProc" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="eb486c3d-1735-477c-92d4-3549478f4ca3" ParentLink="PortDeclaration_CLRAttribute" LowerBound="23.1" HigherBound="24.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="5a230dda-eb98-4904-aaa4-71a0f1f1b9e0" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="25.1" HigherBound="26.1">
+                <om:Property Name="Type" Value="MSC.Hub.ForexService.ExchangeRequest_JSON" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgForexReq" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="9b425666-7546-4e90-b2f2-95a93142fcf5" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="26.1" HigherBound="27.1">
+                <om:Property Name="Type" Value="MSC.Hub.ForexService.ExchangeResponse_JSON" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgForexResp" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="caf60f97-0a18-44f1-8404-c8e78fc323e9" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="27.1" HigherBound="28.1">
+                <om:Property Name="Type" Value="MSC.Hub.ForexService.TypedProcedure_dbo.uspGetCurrencyRate" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgDBReq" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="c36a45a1-f287-4a46-8434-5cfb230a12db" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="28.1" HigherBound="29.1">
+                <om:Property Name="Type" Value="MSC.Hub.ForexService.TypedProcedure_dbo.uspGetCurrencyRateResponse" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgDBResp" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module MSC.Hub.ForexService
+{
+    public porttype rr_ForexService_PT
+    {
+        requestresponse Operation_1
+        {
+            ExchangeRequest_JSON, ExchangeResponse_JSON
+        };
+    };
+    internal porttype sr_DBStoredProc_PT
+    {
+        requestresponse Operation_1
+        {
+            TypedProcedure_dbo.uspGetCurrencyRate, TypedProcedure_dbo.uspGetCurrencyRateResponse
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service ForexServiceProcess
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements rr_ForexService_PT rr_ForexService;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses sr_DBStoredProc_PT sr_DBStoredProc;
+        message ExchangeRequest_JSON msgForexReq;
+        message ExchangeResponse_JSON msgForexResp;
+        message TypedProcedure_dbo.uspGetCurrencyRate msgDBReq;
+        message TypedProcedure_dbo.uspGetCurrencyRateResponse msgDBResp;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("8f5bb297-12aa-4cff-91ab-69649299ea7a")]
+            activate receive (rr_ForexService.Operation_1, msgForexReq);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("ceb54c4c-6586-4159-895d-b95453948c98")]
+            construct msgDBReq
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("bc632f84-f0df-4b5f-821f-4e6024dbfd95")]
+                transform (msgDBReq) = MSC.Hub.ForexService.Maps.ForexRequest_To_DBRequest (msgForexReq);
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("495b7d17-287e-4c0b-8338-3e2ad9783cc0")]
+            send (sr_DBStoredProc.Operation_1, msgDBReq);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("04a6cfb4-ff5d-4225-8ade-e19a6fb5e467")]
+            receive (sr_DBStoredProc.Operation_1, msgDBResp);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("a02ee92f-b048-4dc4-a7d9-500503ec8e84")]
+            construct msgForexResp
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("e13ffcd7-1dea-4270-95ff-6c624ba11fbf")]
+                transform (msgForexResp) = MSC.Hub.ForexService.Maps.DBResponse_To_ForexResponse (msgDBResp);
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("9103813b-ea0e-430d-8c98-c2dc36dc1497")]
+            send (rr_ForexService.Operation_1, msgForexResp);
+        }
+    }
+}
+

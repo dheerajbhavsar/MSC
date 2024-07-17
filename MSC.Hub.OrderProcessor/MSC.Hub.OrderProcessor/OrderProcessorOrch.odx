@@ -1,0 +1,314 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="1325799f-c38d-40a8-8482-565f97aab62d" LowerBound="1.1" HigherBound="64.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="MSC.Hub.OrderProcessor" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="9bf32947-1e88-4cfb-9c6d-520cdd5c997b" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Public" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="Rcv_PurchaseOrder_PT" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="4ef7cafb-2e21-4b32-a750-32c8a7fb3157" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="4615e222-9ad1-4af3-9cb8-323a9ba6f1f0" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.26">
+                    <om:Property Name="Ref" Value="MSC.Hub.OrderProcessor.PurchaseOrder" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="bc770eac-a4c5-42de-b998-622479952ef5" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="snd_SalesOrder_PT" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="bf38ed14-86e4-409a-ba29-d763ce053f20" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="68fc04e4-b498-4cdb-a974-e437c1be2e70" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.23">
+                    <om:Property Name="Ref" Value="MSC.Hub.OrderProcessor.SalesOrder" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="a44d6567-e610-4909-9434-4265ea0627d1" ParentLink="Module_PortType" LowerBound="18.1" HigherBound="25.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="sn_POAck_PT" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="8700b50e-4e93-45d0-a627-87fdf6716241" ParentLink="PortType_OperationDeclaration" LowerBound="20.1" HigherBound="24.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="9ce95ca0-8abe-4783-bb6d-2fb2f53ce746" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="22.13" HigherBound="22.18">
+                    <om:Property Name="Ref" Value="MSC.Hub.OrderProcessor.POAck" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="b1e75fd5-5c4c-4c5e-bf70-e042bf0ed347" ParentLink="Module_ServiceDeclaration" LowerBound="25.1" HigherBound="63.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="OrderProcessorOrch" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="MessageDeclaration" OID="336118c5-5c56-4c3d-83f8-b164bc462a58" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="34.1" HigherBound="35.1">
+                <om:Property Name="Type" Value="MSC.Hub.OrderProcessor.PurchaseOrder" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgPurchaseOrder" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="37881493-d9c2-4f5c-8dfb-6584d09f462e" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="35.1" HigherBound="36.1">
+                <om:Property Name="Type" Value="MSC.Hub.OrderProcessor.POAck" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgPOAck" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="100095c6-4bc6-4acd-a95d-8866a3102449" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="36.1" HigherBound="37.1">
+                <om:Property Name="Type" Value="MSC.Hub.OrderProcessor.SalesOrder" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgSalesOrder" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="d7eb28ea-3b03-403a-85a4-3c9695c41263" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="3c907371-4882-40a0-ba0a-a9c75cebdb6b" ParentLink="ServiceBody_Statement" LowerBound="39.1" HigherBound="41.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="Rcv_PurchaseOrder" />
+                    <om:Property Name="MessageName" Value="msgPurchaseOrder" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Rcv_PurchaseOrder" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Construct" OID="f4b2dc3b-fa77-41c6-82a5-b0665fd3a41a" ParentLink="ServiceBody_Statement" LowerBound="41.1" HigherBound="47.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ConstructPOAck" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Transform" OID="580e3fd2-45f5-49bd-8e0c-261a9b2b27da" ParentLink="ComplexStatement_Statement" LowerBound="44.1" HigherBound="46.1">
+                        <om:Property Name="ClassName" Value="MSC.Hub.OrderProcessor.PurchaseOrder_To_POAck" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="PurchaseOrder_To_POAck" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="MessagePartRef" OID="a176bf93-d058-4b85-925b-e84266c3f129" ParentLink="Transform_InputMessagePartRef" LowerBound="45.87" HigherBound="45.103">
+                            <om:Property Name="MessageRef" Value="msgPurchaseOrder" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_1" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessagePartRef" OID="3e57c2cd-cc3f-45c7-971e-01002de85efb" ParentLink="Transform_OutputMessagePartRef" LowerBound="45.28" HigherBound="45.36">
+                            <om:Property Name="MessageRef" Value="msgPOAck" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_2" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="c9b44de8-cf07-4b14-810c-c905f4b1ebdf" ParentLink="Construct_MessageRef" LowerBound="42.23" HigherBound="42.31">
+                        <om:Property Name="Ref" Value="msgPOAck" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Decision" OID="5ffa9a8f-b2e7-4f3f-9974-9b61daa059c5" ParentLink="ServiceBody_Statement" LowerBound="47.1" HigherBound="59.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Decide_OnStatus" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="DecisionBranch" OID="60a96873-a7e1-450f-b87b-766f07087db4" ParentLink="ReallyComplexStatement_Branch" LowerBound="48.13" HigherBound="59.1">
+                        <om:Property Name="Expression" Value="msgPOAck.Status == &quot;Accepted&quot;" />
+                        <om:Property Name="IsGhostBranch" Value="True" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Accepted" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="Construct" OID="d261233c-fbe7-48be-a8b6-653ee84eaf32" ParentLink="ComplexStatement_Statement" LowerBound="50.1" HigherBound="56.1">
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="ConstructSalesOrder" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="Transform" OID="c17a8c87-54d0-4b20-9cc5-987382dc5f21" ParentLink="ComplexStatement_Statement" LowerBound="53.1" HigherBound="55.1">
+                                <om:Property Name="ClassName" Value="MSC.Hub.OrderProcessor.PurchaseOrder_To_SalesOrder" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="PurchaseOrder_To_SalesOrder" />
+                                <om:Property Name="Signal" Value="False" />
+                                <om:Element Type="MessagePartRef" OID="ecb0516f-ab56-4d89-ad66-3a78690cafda" ParentLink="Transform_InputMessagePartRef" LowerBound="54.101" HigherBound="54.117">
+                                    <om:Property Name="MessageRef" Value="msgPurchaseOrder" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="MessagePartReference_3" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                                <om:Element Type="MessagePartRef" OID="dbbc665f-3041-4fbf-823b-5528a90be526" ParentLink="Transform_OutputMessagePartRef" LowerBound="54.32" HigherBound="54.45">
+                                    <om:Property Name="MessageRef" Value="msgSalesOrder" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="MessagePartReference_4" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                            </om:Element>
+                            <om:Element Type="MessageRef" OID="f3fd716e-f10a-497c-80dc-887cf9093a08" ParentLink="Construct_MessageRef" LowerBound="51.27" HigherBound="51.40">
+                                <om:Property Name="Ref" Value="msgSalesOrder" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="Send" OID="76673f05-3c69-404b-b09c-1f01d6da98e7" ParentLink="ComplexStatement_Statement" LowerBound="56.1" HigherBound="58.1">
+                            <om:Property Name="PortName" Value="snd_SalesOrder" />
+                            <om:Property Name="MessageName" Value="msgSalesOrder" />
+                            <om:Property Name="OperationName" Value="Operation_1" />
+                            <om:Property Name="OperationMessageName" Value="Request" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Snd_SO_ToWarehouse" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="DecisionBranch" OID="7e337eaf-8994-48ff-849e-f67152df92eb" ParentLink="ReallyComplexStatement_Branch">
+                        <om:Property Name="IsGhostBranch" Value="True" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Declined" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Send" OID="56178d3a-0c4e-43b7-8ecb-595694450b76" ParentLink="ServiceBody_Statement" LowerBound="59.1" HigherBound="61.1">
+                    <om:Property Name="PortName" Value="sn_POAck" />
+                    <om:Property Name="MessageName" Value="msgPOAck" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Snd_AckToPartner" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="e84a80b4-44c3-4636-a44b-b80495fb143b" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="28.1" HigherBound="30.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="11" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="MSC.Hub.OrderProcessor.Rcv_PurchaseOrder_PT" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Rcv_PurchaseOrder" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="f65ae00c-a154-4d4c-9da4-2a2526bd7101" ParentLink="PortDeclaration_CLRAttribute" LowerBound="28.1" HigherBound="29.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="f617ee11-6cdf-4494-be4a-e70aa76af48c" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="30.1" HigherBound="32.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="35" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="MSC.Hub.OrderProcessor.snd_SalesOrder_PT" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="snd_SalesOrder" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="e691e3aa-772b-46f5-a9f3-138432e77e4b" ParentLink="PortDeclaration_CLRAttribute" LowerBound="30.1" HigherBound="31.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="84e267bc-3772-4d4a-b5fb-a8027bc40170" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="32.1" HigherBound="34.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="43" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="MSC.Hub.OrderProcessor.sn_POAck_PT" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="sn_POAck" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="ffa6c5c1-3e80-4505-84ea-2f94de169622" ParentLink="PortDeclaration_CLRAttribute" LowerBound="32.1" HigherBound="33.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module MSC.Hub.OrderProcessor
+{
+    public porttype Rcv_PurchaseOrder_PT
+    {
+        oneway Operation_1
+        {
+            PurchaseOrder
+        };
+    };
+    internal porttype snd_SalesOrder_PT
+    {
+        oneway Operation_1
+        {
+            SalesOrder
+        };
+    };
+    internal porttype sn_POAck_PT
+    {
+        oneway Operation_1
+        {
+            POAck
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service OrderProcessorOrch
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements Rcv_PurchaseOrder_PT Rcv_PurchaseOrder;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses snd_SalesOrder_PT snd_SalesOrder;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses sn_POAck_PT sn_POAck;
+        message PurchaseOrder msgPurchaseOrder;
+        message POAck msgPOAck;
+        message SalesOrder msgSalesOrder;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("3c907371-4882-40a0-ba0a-a9c75cebdb6b")]
+            activate receive (Rcv_PurchaseOrder.Operation_1, msgPurchaseOrder);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("f4b2dc3b-fa77-41c6-82a5-b0665fd3a41a")]
+            construct msgPOAck
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("580e3fd2-45f5-49bd-8e0c-261a9b2b27da")]
+                transform (msgPOAck) = MSC.Hub.OrderProcessor.PurchaseOrder_To_POAck (msgPurchaseOrder);
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("5ffa9a8f-b2e7-4f3f-9974-9b61daa059c5")]
+            if (msgPOAck.Status == "Accepted")
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("d261233c-fbe7-48be-a8b6-653ee84eaf32")]
+                construct msgSalesOrder
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("c17a8c87-54d0-4b20-9cc5-987382dc5f21")]
+                    transform (msgSalesOrder) = MSC.Hub.OrderProcessor.PurchaseOrder_To_SalesOrder (msgPurchaseOrder);
+                }
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("76673f05-3c69-404b-b09c-1f01d6da98e7")]
+                send (snd_SalesOrder.Operation_1, msgSalesOrder);
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("56178d3a-0c4e-43b7-8ecb-595694450b76")]
+            send (sn_POAck.Operation_1, msgPOAck);
+        }
+    }
+}
+
